@@ -39,6 +39,7 @@ class Counter extends Component {
   // };
 
   render() {
+    console.log("Counter rendered");
     // Every React Component has a property called 'props'.
     // 'value' and 'selector' from counters.jsx will be the properties of the props object. 'key' is not included because it is a special attribute
     console.log("props", this.props);
