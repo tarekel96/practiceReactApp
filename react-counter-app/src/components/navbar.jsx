@@ -1,16 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 
-class NavBar extends Component {
-  render() {
-    return (
-      <nav className="navbar navbar-light bg-light">
-        {/* eslint-disable-next-line */}
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
-      </nav>
-    );
-  }
-}
+// stateless functional component
+const NavBar = ({ totalCounters }) => {
+  return (
+    <nav className="navbar navbar-light bg-light">
+      {/* eslint-disable-next-line */}
+      <a className="navbar-brand" href="#">
+        Navbar{" "}
+        <span className="badge badge-pill badge-secondary">
+          {/* eslint-disable-next-line */}
+          {totalCounters}
+        </span>
+      </a>
+    </nav>
+  );
+};
 
 export default NavBar;
