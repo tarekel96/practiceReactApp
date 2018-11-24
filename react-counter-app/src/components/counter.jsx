@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: this.props.value,
+    count: this.props.counter.value,
     imageUrl: "http://picsum.photos/200", // generates random 200x200 picture
     tags: ["tag1", "tag2", "tag3"]
   };
@@ -72,7 +72,12 @@ class Counter extends Component {
         >
           Increment
         </button>
-        <button className="btn btn-danger btn-sm m-2">Delete</button>
+        <button
+          onClick={() => this.props.onDelete(this.props.counter.id)}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
         {/* if the length of the tags array is = '0', it will return the expression (conditionally rendering content with && and truthy/falsy concepts) */}
         {this.state.tags.length === 0 && "Please create a new tag!"}
         {this.renderTags()}
